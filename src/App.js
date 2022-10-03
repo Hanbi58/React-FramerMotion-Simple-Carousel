@@ -1,23 +1,20 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import { motion } from "framer-motion";
+import { useState, useRef, useEffect } from "react";
+import images from "./images";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <motion.div className="carousel">
+        <motion.div className="inner-carousel">
+          {images.map((image) => (
+            <motion.div className="item">
+              <img src={image} alt="" />
+            </motion.div>
+          ))}
+        </motion.div>
+      </motion.div>
     </div>
   );
 }
